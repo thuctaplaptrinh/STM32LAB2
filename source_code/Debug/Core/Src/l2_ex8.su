@@ -1,0 +1,4 @@
+l2_ex8.c:19:6:setTimer1	16	static
+l2_ex8.c:24:6:setTimer2	16	static
+l2_ex8.c:29:6:setTimer3	16	static
+l2_ex8.c:34:6:timer8_run	4	static

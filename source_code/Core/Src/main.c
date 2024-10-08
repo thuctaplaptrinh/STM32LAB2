@@ -26,7 +26,8 @@
 #include "l2_ex3.h"
 #include "l2_ex5.h"
 #include "l2_ex8.h"
-//#include "l2_ex9.h"
+#include "l2_ex9.h"
+#include "l2_ex10.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,40 +103,63 @@ int main(void)
 //  int status2 = 3;
 //  setTimer2(100);
 //  setTimer2(50)
-  int led_index = 0;
-  setTimer1(100);
-  setTimer2(50);
-  setTimer3(50);
+//  int led_index = 0;
+//  setTimer1(100);
+//  setTimer2(50);
+//  setTimer3(50);
+  index_led_matrix = 0;
+//  setTimer4(10);
+  setTimer5(10);
+  setTimer6(10);
   while (1)
   {
-	  if(timer1_flag == 1){
-		  second++;
-		  if(second >= 60){
-			  second = 0;
-			  minute++;
-		  }
-		  if(minute >= 60){
-			  minute = 0;
-			  hour++;
-		  }
-		  if(hour >= 24){
-			  hour = 0;
-		  }
-		  updateClockBuffer();
-		  HAL_GPIO_WritePin (DOT_GPIO_Port ,DOT_Pin, GPIO_PIN_RESET ) ;
-		  setTimer1(100);
-//		  HAL_Delay(1000);
+	  if (index_led_matrix >= 8)
+	  {
+		  index_led_matrix = 0;
 	  }
-	  if(timer2_flag == 1){
-		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
-		  setTimer2(50);
+	  if (timer5_flag == 1)
+	  {
+		  setTimer5(10);
+		  updateLEDMatrix(index_led_matrix++);
 	  }
-	  if(timer3_flag == 1){
-		  HAL_GPIO_WritePin (DOT_GPIO_Port ,DOT_Pin, GPIO_PIN_RESET ) ;
-		  update7SEG(led_index++);
-		  if(led_index > 3) led_index = 0;
-		  setTimer3(50);
+	  if (timer6_flag == 1)
+	  {
+		  setTimer6(80);
+		  shift_left();
 	  }
+//	  if(index_led_matrix > 7) index_led_matrix= 0;
+//	  if(timer4_flag == 1){
+//		  setTimer4(10);
+//		  updateLEDMatrix(index_led_matrix++);
+//	  }
+//	  if(timer1_flag == 1){
+//		  second++;
+//		  if(second >= 60){
+//			  second = 0;
+//			  minute++;
+//		  }
+//		  if(minute >= 60){
+//			  minute = 0;
+//			  hour++;
+//		  }
+//		  if(hour >= 24){
+//			  hour = 0;
+//		  }
+//		  updateClockBuffer();
+//		  HAL_GPIO_WritePin (DOT_GPIO_Port ,DOT_Pin, GPIO_PIN_RESET ) ;
+//		  setTimer1(100);
+////		  HAL_Delay(1000);
+//	  }
+//	  if(timer2_flag == 1){
+//		  HAL_GPIO_TogglePin(DOT_GPIO_Port, DOT_Pin);
+//		  setTimer2(50);
+//	  }
+//	  if(timer3_flag == 1){
+//		  HAL_GPIO_WritePin (DOT_GPIO_Port ,DOT_Pin, GPIO_PIN_RESET ) ;
+//		  update7SEG(led_index++);
+//		  if(led_index > 3) led_index = 0;
+//		  setTimer3(50);
+//	  }
 //
     /* USER CODE END WHILE */
 
@@ -285,7 +309,7 @@ static void MX_GPIO_Init(void)
 //int led_index = 0;
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	timer8_run();
+	timer10_run();
 //	if(counter1 > 0){
 //		counter1--;
 //		if(counter1 <= 0){

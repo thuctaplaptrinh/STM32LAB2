@@ -1,2 +1,4 @@
-l2_ex9.c:14:6:readBuffer	16	static
-l2_ex9.c:34:6:updateLEDMatrix	16	static
+l2_ex9.c:17:6:setTimer4	16	static
+l2_ex9.c:22:6:timer9_run	4	static
+l2_ex9.c:31:6:readBuffer	16	static
+l2_ex9.c:51:6:updateLEDMatrix	16	static

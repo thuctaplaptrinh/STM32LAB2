@@ -1,0 +1,4 @@
+l2_ex10.c:17:6:setTimer5	16	static
+l2_ex10.c:22:6:setTimer6	16	static
+l2_ex10.c:27:6:timer10_run	4	static
+l2_ex10.c:42:6:shift_left	16	static

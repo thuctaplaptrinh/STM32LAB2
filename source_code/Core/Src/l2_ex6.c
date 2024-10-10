@@ -15,7 +15,7 @@ void setTimer0(int duration){
 	timer0_flag = 0;
 }
 
-void timer_run(){
+void timer6_run(){
 	if(timer0_counter > 0){
 		timer0_counter--;
 		if( timer0_counter == 0){

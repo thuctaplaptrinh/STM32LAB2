@@ -25,6 +25,7 @@
 #include "l2_ex1.h"
 #include "l2_ex3.h"
 #include "l2_ex5.h"
+#include "l2_ex6.h"
 #include "l2_ex8.h"
 #include "l2_ex9.h"
 #include "l2_ex10.h"
@@ -101,37 +102,44 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 //  int status1 = 1;
 //  int status2 = 3;
-//  setTimer2(100);
-//  setTimer2(50)
 //  int led_index = 0;
+  setTimer0(1);
 //  setTimer1(100);
 //  setTimer2(50);
 //  setTimer3(50);
-  index_led_matrix = 0;
+//  index_led_matrix = 0;
 //  setTimer4(10);
-  setTimer5(10);
-  setTimer6(10);
+//  setTimer5(10);
+//  setTimer6(10);
   while (1)
   {
-	  if (index_led_matrix >= 8)
-	  {
-		  index_led_matrix = 0;
+	  if ( timer0_flag == 1) {
+		  HAL_GPIO_TogglePin ( LED_RED_GPIO_Port , LED_RED_Pin ) ;
+//		  HAL_GPIO_WritePin (LED_RED_GPIO_Port ,LED_RED_Pin, GPIO_PIN_SET ) ;
+		  setTimer0 (200) ;
 	  }
-	  if (timer5_flag == 1)
-	  {
-		  setTimer5(10);
-		  updateLEDMatrix(index_led_matrix++);
-	  }
-	  if (timer6_flag == 1)
-	  {
-		  setTimer6(80);
-		  shift_left();
-	  }
+
+//	  if (index_led_matrix >= 8)
+//	  {
+//		  index_led_matrix = 0;
+//	  }
+//	  if (timer5_flag == 1)
+//	  {
+//		  setTimer5(10);
+//		  updateLEDMatrix(index_led_matrix++);
+//	  }
+//	  if (timer6_flag == 1)
+//	  {
+//		  setTimer6(80);
+//		  shift_left();
+//	  }
+
 //	  if(index_led_matrix > 7) index_led_matrix= 0;
 //	  if(timer4_flag == 1){
 //		  setTimer4(10);
 //		  updateLEDMatrix(index_led_matrix++);
 //	  }
+
 //	  if(timer1_flag == 1){
 //		  second++;
 //		  if(second >= 60){
@@ -309,7 +317,7 @@ static void MX_GPIO_Init(void)
 //int led_index = 0;
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim )
 {
-	timer10_run();
+	timer6_run();
 //	if(counter1 > 0){
 //		counter1--;
 //		if(counter1 <= 0){

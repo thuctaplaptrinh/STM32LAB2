@@ -25,8 +25,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/l2_ex1.h ../Core/Inc/main.h ../Core/Inc/l2_ex3.h \
  ../Core/Inc/l2_ex1.h ../Core/Inc/l2_ex5.h ../Core/Inc/l2_ex3.h \
- ../Core/Inc/l2_ex8.h ../Core/Inc/l2_ex9.h ../Core/Inc/l2_ex10.h \
- ../Core/Inc/l2_ex9.h
+ ../Core/Inc/l2_ex6.h ../Core/Inc/l2_ex8.h ../Core/Inc/l2_ex9.h \
+ ../Core/Inc/l2_ex10.h ../Core/Inc/l2_ex9.h
 
 ../Core/Inc/main.h:
 
@@ -89,6 +89,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/l2_ex5.h:
 
 ../Core/Inc/l2_ex3.h:
+
+../Core/Inc/l2_ex6.h:
 
 ../Core/Inc/l2_ex8.h:
 
